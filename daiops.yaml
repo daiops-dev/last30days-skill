@@ -1,0 +1,18 @@
+# DAIOps install manifest. DAIOps runs these steps, in order, in the workspace of every
+# employee hired from this talent. A step whose `check` already passes is skipped.
+# Versions must be pinned (DAIOps rejects @latest and unpinned global installs).
+#
+# last30days needs Python 3.12+ and the DAIOps workspace image ships 3.11 (Debian bookworm).
+# uv is pinned, so the 3.12 build it installs is pinned with it.
+schema: 1
+upstream:
+  repo: mvanhorn/last30days-skill
+  ref: v3.27.3
+install:
+  - id: uv
+    run: pip install --break-system-packages --no-cache-dir uv==0.13.0
+    check: uv --version | grep -q "^uv 0\.13\.0"
+  - id: python
+    # Put python3.12 on a directory that is on PATH for every user of the workspace.
+    run: UV_PYTHON_BIN_DIR=/usr/local/bin uv python install 3.12
+    check: python3.12 --version | grep -q "^Python 3\.12\."

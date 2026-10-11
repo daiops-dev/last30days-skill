@@ -1,3 +1,8 @@
+> **DAIOps copy.** This is a copy of [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) at `v3.27.3`,
+> MIT License, Copyright (c) 2026 Matt Van Horn ([LICENSE](LICENSE), unchanged). The skill is unchanged; DAIOps only adds
+> [daiops.yaml](daiops.yaml) (pinned Python 3.12 for the DAIOps workspace). See [NOTICE](NOTICE) and [CHANGES.md](CHANGES.md).
+> For the skill itself, use the original repository.
+
 # /last30days
 
 English | [Français](README.fr.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
